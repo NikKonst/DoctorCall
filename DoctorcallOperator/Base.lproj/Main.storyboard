@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Doctorcall" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Login" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XQU-Pt-Ocm">
+                                <rect key="frame" x="0.0" y="181" width="600" height="56"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="26"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rdS-D3-gcJ">
+                                <rect key="frame" x="0.0" y="236" width="600" height="56"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="26"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MCm-bE-MRV">
+                                <rect key="frame" x="277" y="300" width="46" height="30"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginButtonTouch:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GHa-ys-T6B"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="XQU-Pt-Ocm" secondAttribute="trailing" constant="-20" id="26J-Eu-gxJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="rdS-D3-gcJ" secondAttribute="trailing" constant="-20" id="7I7-2O-Qvl"/>
+                            <constraint firstItem="MCm-bE-MRV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8CS-82-Gu2"/>
+                            <constraint firstItem="XQU-Pt-Ocm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Gq2-8F-ajz"/>
+                            <constraint firstItem="rdS-D3-gcJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="zmp-Xs-jUG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loginButton" destination="MCm-bE-MRV" id="7wB-wB-vJ6"/>
+                        <outlet property="loginTextField" destination="XQU-Pt-Ocm" id="hQR-cU-gYN"/>
+                        <outlet property="passwordTextField" destination="rdS-D3-gcJ" id="EG9-l7-4Th"/>
+                        <segue destination="bT5-r0-Qkd" kind="presentation" identifier="showCallViewController" id="6XV-kg-r9k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="400" y="277"/>
+        </scene>
+        <!--Video Call View Controller-->
+        <scene sceneID="ad2-Kd-UQC">
+            <objects>
+                <viewController id="bT5-r0-Qkd" customClass="VideoCallViewController" customModule="Doctorcall" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cCX-0g-xzo"/>
+                        <viewControllerLayoutGuide type="bottom" id="nxf-KZ-J1b"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleAspectFill" id="wy7-1D-M2i">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0BD-ly-gJD" customClass="QBRTCRemoteVideoView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ikV-Sd-I0Q">
+                                <rect key="frame" x="0.0" y="120" width="600" height="39"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="197-io-atr">
+                                <rect key="frame" x="273" y="398" width="55" height="30"/>
+                                <state key="normal" title="Call"/>
+                                <connections>
+                                    <action selector="callUser:" destination="bT5-r0-Qkd" eventType="touchUpInside" id="0ms-id-pBh"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PBO-XR-dAv">
+                                <rect key="frame" x="381" y="398" width="65" height="30"/>
+                                <state key="normal" title="Accept"/>
+                                <connections>
+                                    <action selector="acceptButtonTouch:" destination="bT5-r0-Qkd" eventType="touchUpInside" id="aYB-wG-KqK"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoy-nF-hGp">
+                                <rect key="frame" x="155" y="398" width="65" height="30"/>
+                                <state key="normal" title="Reject"/>
+                                <connections>
+                                    <action selector="rejectButtonTouch:" destination="bT5-r0-Qkd" eventType="touchUpInside" id="btc-Hy-25z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RtD-AG-wdt">
+                                <rect key="frame" x="479" y="562" width="101" height="30"/>
+                                <state key="normal" title="Change view"/>
+                                <connections>
+                                    <action selector="switchCamera:" destination="bT5-r0-Qkd" eventType="touchUpInside" id="GcC-6L-CuX"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u88-tg-UQl">
+                                <rect key="frame" x="255" y="480" width="90" height="120"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nxf-KZ-J1b" firstAttribute="top" secondItem="u88-tg-UQl" secondAttribute="bottom" id="0A1-Bl-Dwc"/>
+                            <constraint firstItem="197-io-atr" firstAttribute="centerX" secondItem="wy7-1D-M2i" secondAttribute="centerX" id="3O8-tI-ENH"/>
+                            <constraint firstItem="RtD-AG-wdt" firstAttribute="trailing" secondItem="wy7-1D-M2i" secondAttribute="trailingMargin" id="692-PS-cHg"/>
+                            <constraint firstItem="nxf-KZ-J1b" firstAttribute="top" secondItem="0BD-ly-gJD" secondAttribute="bottom" id="8hg-rz-zvZ"/>
+                            <constraint firstItem="0BD-ly-gJD" firstAttribute="leading" secondItem="wy7-1D-M2i" secondAttribute="leadingMargin" constant="-20" id="AnB-sq-8dH"/>
+                            <constraint firstItem="ikV-Sd-I0Q" firstAttribute="leading" secondItem="wy7-1D-M2i" secondAttribute="leadingMargin" constant="-20" id="Lh5-Hy-gz3"/>
+                            <constraint firstItem="197-io-atr" firstAttribute="leading" secondItem="eoy-nF-hGp" secondAttribute="trailing" constant="53" id="OOb-Tc-INc"/>
+                            <constraint firstItem="ikV-Sd-I0Q" firstAttribute="centerX" secondItem="wy7-1D-M2i" secondAttribute="centerX" id="RZG-9q-BCt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ikV-Sd-I0Q" secondAttribute="trailing" constant="-20" id="bP8-O3-cnq"/>
+                            <constraint firstItem="0BD-ly-gJD" firstAttribute="top" secondItem="wy7-1D-M2i" secondAttribute="topMargin" id="bfU-Jm-95w"/>
+                            <constraint firstItem="PBO-XR-dAv" firstAttribute="leading" secondItem="197-io-atr" secondAttribute="trailing" constant="53" id="ecW-Eb-dJw"/>
+                            <constraint firstItem="ikV-Sd-I0Q" firstAttribute="top" secondItem="cCX-0g-xzo" secondAttribute="bottom" constant="100" id="j0p-jG-LE5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0BD-ly-gJD" secondAttribute="trailing" constant="-20" id="lzK-mJ-DjK"/>
+                            <constraint firstItem="nxf-KZ-J1b" firstAttribute="top" secondItem="RtD-AG-wdt" secondAttribute="bottom" constant="8" id="orG-uX-Cql"/>
+                            <constraint firstItem="u88-tg-UQl" firstAttribute="centerX" secondItem="wy7-1D-M2i" secondAttribute="centerX" id="vPx-SV-anY"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Wnz-Uk-Cvj"/>
+                    <connections>
+                        <outlet property="acceptButton" destination="PBO-XR-dAv" id="bIL-hf-sXG"/>
+                        <outlet property="callButton" destination="197-io-atr" id="XLi-fX-pUO"/>
+                        <outlet property="callUserInfo" destination="ikV-Sd-I0Q" id="J3R-rC-SOu"/>
+                        <outlet property="localVideoView" destination="u88-tg-UQl" id="Lkq-fG-BJz"/>
+                        <outlet property="opponentVideoView" destination="0BD-ly-gJD" id="jqR-8u-znK"/>
+                        <outlet property="rejectButton" destination="eoy-nF-hGp" id="sWC-5o-BfK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EWE-JU-d8j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1079" y="277"/>
+        </scene>
+    </scenes>
+</document>
